@@ -8,8 +8,15 @@ class Spaceship extends Phaser.GameObjects.Sprite {
     }
 
     update(){
-        //move spaceship left
-    
+    if (Phaser.Input.Keyboard.JustDown(keyRIGHT)){
+            //hard mode
+            game.settings = {
+                spaceshipSpeed: 4,
+                gameTimer: 45000
+            }
+            this.sound.play('sfx_select');
+            this.scene.start('playScene');
+        }
     }
 
     //position reset
